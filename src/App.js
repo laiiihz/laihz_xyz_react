@@ -6,6 +6,10 @@ import './App.css';
 const webName='Laihz';
 const webNavName='Laihz Navigator';
 
+/*
+* web
+* */
+
 class NavBar extends Component{
     render() {
         return (
