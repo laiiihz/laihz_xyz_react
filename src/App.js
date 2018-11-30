@@ -5,7 +5,7 @@ import './App.css';
 
 const webName='Laihz';
 const webNavName='Laihz Navigator';
-
+const webUrlMe='http://laihz.xyz';
 /*
 * web
 * */
@@ -64,7 +64,7 @@ class NavBar extends Component{
             <div>
                 <nav>
                     <div className="nav-wrapper">
-                        <a href="#" className="brand-logo right">{webName}</a>
+                        <a href={webUrlMe} className="brand-logo right">{webName}</a>
                         <ul id="nav-mobile" className="left ">
                             <GenerateNavUrl/>
                         </ul>
@@ -75,11 +75,36 @@ class NavBar extends Component{
     }
 }
 
+function NavImage() {
+    return <img src='res/1.jpg' alt='???'/>;
+}
+function NavSpan() {
+    return <span className="card-title " style={{fontsize:"50px"}}>Laihz Navigator</span>;
+
+}
+class CardNav extends Component{
+    render() {
+        return (
+            <div className="row">
+                <div className="col s12">
+                    <div className="card">
+                        <div className="card-image ">
+                            <NavImage/>
+                            <NavSpan/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
 class App extends Component {
   render() {
     return (
       <div className="App">
           <NavBar/>
+          <CardNav/>
       </div>
     );
   }
