@@ -19,44 +19,43 @@ const websites={
         jetbrains:'https://www.jetbrains.com/',
         stackOverFlow:'https://stackoverflow.com',
         github:'https://github.com/'
+    },
+    Design:{
+        unsplash:'https://unsplash.com/',
+        iconFont:'http://www.iconfont.cn/'
+    },
+    Website:{
+        otpTool:'https://otp.landian.la/zh-cn/',
+        appinn:'https://www.appinn.com/',
+        iplaysoft:'https://www.iplaysoft.com/',
+        coolapk:'http://www.coolapk.com/',
+        zimuzu:'http://www.zimuzu.tv/'
+    },
+    OJ:{
+        PAT:'https://www.patest.cn/',
+        leetcodeCN:'https://www.leetcode-cn.com/',
+        luogu:'https://www.luogu.org/'
+    },
+    spirit:{
+        offTheAir:'https://www.adultswim.com/videos/off-the-air',
+        chromeEx:'https://experiments.withgoogle.com/'
+    },
+    Goods:{
+        ikea:'https://www.ikea.cn/cn/zh/',
+        decathlon:'https://www.decathlon.com.cn/',
+        mi:'https://www.mi.com/'
     }
-
 };
-/*TODO some class to const*/
-
-class Design {
-    static unsplash='https://unsplash.com/';
-    static iconFont='http://www.iconfont.cn/';
-
-}
-
-class Website {
-    static otpTool='https://otp.landian.la/zh-cn/';
-    static appinn='https://www.appinn.com/';
-    static iplaysoft='https://www.iplaysoft.com/';
-    static coolapk='http://www.coolapk.com/';
-    static zimuzu='http://www.zimuzu.tv/';
-}
-
-class OJ {
-    static PAT='https://www.patest.cn/';
-    static leetcodeCN='https://www.leetcode-cn.com/';
-    static luogu='https://www.luogu.org/';
-}
-
-class spirit {
-    static offTheAir='https://www.adultswim.com/videos/off-the-air';
-    static chromeEx='https://experiments.withgoogle.com/';
-}
-
-class Goods{
-    static ikea='https://www.ikea.cn/cn/zh/';
-    static decathlon='https://www.decathlon.com.cn/';
-    static mi='https://www.mi.com/';
-}
 
 function ListHref(props) {
-    return <li><a href={props.webName}>{props.webName}</a></li>;
+    return <li><a href={props.webUrl}>{props.webName}</a></li>;
+}
+function GenerateNavUrl() {
+    return(
+        <div>
+            <ListHref webUrl={laihzGithub} webName="Github" />
+        </div>
+    );
 }
 
 class NavBar extends Component{
@@ -65,11 +64,9 @@ class NavBar extends Component{
             <div>
                 <nav>
                     <div className="nav-wrapper">
-                        <a href="#" className="brand-logo right">Logo</a>
+                        <a href="#" className="brand-logo right">{webName}</a>
                         <ul id="nav-mobile" className="left ">
-                            <ListHref webName='laihzGithub'/>
-                            <li><a href={DeveloperWeb.android}>Components</a></li>
-                            <li><a href="collapsible.html">JavaScript</a></li>
+                            <GenerateNavUrl/>
                         </ul>
                     </div>
                 </nav>
