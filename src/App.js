@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import M from 'materialize-css';
+import {Button,Icon,Navbar,SideNav,NavItem} from 'react-materialize';
 //import logo from './logo.svg';
 import './App.css';
-import 'materialize-css/dist/css/materialize.css'
 
 
 
@@ -55,9 +54,7 @@ const Design=websites.Design;
 console.log(Object.keys(websites.Design)[0]);
 let Designq=new Component(0)[2];
 function Designxx() {
-    for(let i=0; i<2; i++){
-        Designq[i]=<a href={Design[i]}></a>;
-    }
+
 }
 
 function ListHref(props) {
@@ -72,19 +69,14 @@ function GenerateNavUrl() {
     );
 }
 
-class NavBar extends Component{
-    render() {
+const brandWithColor=<span className="black-text">Laihz</span>;
+const brandWithColorG=<span className="black-text">Github</span>;
+class NavBarReact extends Component{
+    render(){
         return (
-            <div>
-                <nav>
-                    <div className="nav-wrapper white">
-                        <a href={webUrlMe} className="brand-logo right black-text">{webName}</a>
-                        <ul id="nav-mobile" className="left ">
-                            <GenerateNavUrl/>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+            <Navbar brand={brandWithColor} left className="white">
+                <NavItem href={webUrlMe} >{brandWithColorG}</NavItem>
+            </Navbar>
         );
     }
 }
@@ -119,6 +111,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <NavBarReact/>
           <NavBar/>
           <CardNav/>
 
@@ -126,9 +119,6 @@ class App extends Component {
     );
   }
 
-  componentDidMount() {
-      M.AutoInit();
-  }
 }
 
 export default App;
