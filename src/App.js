@@ -69,13 +69,12 @@ function GenerateNavUrl() {
     );
 }
 
-const brandWithColor=<span className="black-text">Laihz</span>;
-const brandWithColorG=<span className="black-text">Github</span>;
+
 class NavBarReact extends Component{
     render(){
         return (
-            <Navbar brand={brandWithColor} left className="white ">
-                <NavItem href={webUrlMe} >{brandWithColorG}</NavItem>
+            <Navbar brand={webName} left className="grey">
+                <NavItem href={webUrlMe} >Github</NavItem>
             </Navbar>
         );
     }
