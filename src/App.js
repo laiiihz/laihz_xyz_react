@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-//import M from 'materialize-css';
+import M from 'materialize-css';
 //import logo from './logo.svg';
 import './App.css';
+import 'materialize-css/dist/css/materialize.css'
+
+
 
 const webName='Laihz';
 const webNavName='Laihz Navigator';
@@ -46,10 +49,21 @@ const websites={
         mi:'https://www.mi.com/'
     }
 };
+console.log(websites);
+console.log(websites.Website);
+const Design=websites.Design;
+console.log(Object.keys(websites.Design)[0]);
+let Designq=new Component(0)[2];
+function Designxx() {
+    for(let i=0; i<2; i++){
+        Designq[i]=<a href={Design[i]}></a>;
+    }
+}
 
 function ListHref(props) {
-    return <li><a href={props.webUrl}>{props.webName}</a></li>;
+    return <li><a href={props.webUrl} className="black-text">{props.webName}</a></li>;
 }
+
 function GenerateNavUrl() {
     return(
         <div>
@@ -63,8 +77,8 @@ class NavBar extends Component{
         return (
             <div>
                 <nav>
-                    <div className="nav-wrapper">
-                        <a href={webUrlMe} className="brand-logo right">{webName}</a>
+                    <div className="nav-wrapper white">
+                        <a href={webUrlMe} className="brand-logo right black-text">{webName}</a>
                         <ul id="nav-mobile" className="left ">
                             <GenerateNavUrl/>
                         </ul>
@@ -76,12 +90,14 @@ class NavBar extends Component{
 }
 
 function NavImage() {
-    return <img src='res/1.jpg' alt='???'/>;
+    return <img src='res/1.jpg' alt='Navigator'/>;
 }
+
 function NavSpan() {
-    return <span className="card-title " style={{fontsize:"50px"}}>Laihz Navigator</span>;
+    return <span className="card-title " style={{fontSize:"50px"}}>{webNavName}</span>;
 
 }
+
 class CardNav extends Component{
     render() {
         return (
@@ -105,8 +121,13 @@ class App extends Component {
       <div className="App">
           <NavBar/>
           <CardNav/>
+
       </div>
     );
+  }
+
+  componentDidMount() {
+      M.AutoInit();
   }
 }
 
