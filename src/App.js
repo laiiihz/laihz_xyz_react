@@ -74,7 +74,7 @@ const brandWithColorG=<span className="black-text">Github</span>;
 class NavBarReact extends Component{
     render(){
         return (
-            <Navbar brand={brandWithColor} left className="white">
+            <Navbar brand={brandWithColor} left className="white ">
                 <NavItem href={webUrlMe} >{brandWithColorG}</NavItem>
             </Navbar>
         );
@@ -112,7 +112,6 @@ class App extends Component {
     return (
       <div className="App">
           <NavBarReact/>
-          <NavBar/>
           <CardNav/>
 
       </div>
