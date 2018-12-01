@@ -61,15 +61,6 @@ function ListHref(props) {
     return <li><a href={props.webUrl} className="black-text">{props.webName}</a></li>;
 }
 
-function GenerateNavUrl() {
-    return(
-        <div>
-            <ListHref webUrl={laihzGithub} webName="Github" />
-        </div>
-    );
-}
-
-
 class NavBarReact extends Component{
     render(){
         return (
