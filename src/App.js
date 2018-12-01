@@ -55,7 +55,6 @@ console.log(websites);
 console.log(websites.Website);
 const Design=websites.Design;
 console.log(Object.keys(websites.Design).length);
-console.log(Object.getOwnPropertyNames(websites.Design));
 let Designq=new Component(0)[2];
 
 class NavBarReact extends Component{
@@ -81,11 +80,22 @@ class CardNavReact extends Component{
     }
 }
 
-
+function WebGen()  {
+    let result=<div></div>;
+    for(let i=0;i<Object.keys(websites).length;i++){
+        result+=(
+            <CollapsibleItem header={Object.keys(websites)[i]} icon={Object.keys(Object.keys(websites)[i])[0]}>
+                Lorem ipsum dolor sit amet.
+            </CollapsibleItem>
+        );
+    }
+    console.log();
+    return result;
+}
 class WebItem extends Component{
     render(){
         return (
-            <CollapsibleItem header={this.props.header} icon={this.props.myicon}>
+            <CollapsibleItem header={this.props.header} >
                 Lorem ipsum dolor sit amet.
             </CollapsibleItem>
         );
@@ -96,10 +106,7 @@ class WebsGen extends Component{
         let item=[];
         for(let i=0;i<Object.keys(websites).length;i++){
             item.push(<WebItem  header={Object.keys(websites)[i]}
-                                myicon={Object.keys(Object.keys(websites)[i])[0]}
                                 key={Object.keys(websites)[i]}/>);
-            //console.log(Object.keys(Object.keys(websites)[i])[0]);
-
         }
         return item;
     }
