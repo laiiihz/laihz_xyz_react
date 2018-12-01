@@ -86,23 +86,6 @@ class CardNavReact extends Component{
     }
 }
 
-class CardNav extends Component{
-    render() {
-        return (
-            <div className="row">
-                <div className="col s12">
-                    <div className="card">
-                        <div className="card-image ">
-                            <NavImage/>
-                            <NavSpan/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-
 class App extends Component {
   render() {
     return (
