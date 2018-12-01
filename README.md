@@ -28,7 +28,7 @@ npm install react-materialize
 npm install react-create-app
 ```
 
-##Running
+### Running
 ```bash
 npm start
 ```
