@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import {Button,Icon,Navbar,NavItem,Card,CardTitle,Footer,Collapsible,CollapsibleItem} from 'react-materialize';
-//import logo from './logo.svg';
+import {
+    Button,Navbar,NavItem,
+    Card,CardTitle,Footer,
+    Collapsible,CollapsibleItem
+} from 'react-materialize';
 import './App.css';
 
 
@@ -56,11 +59,6 @@ const websites={
         mi:'https://www.mi.com/'
     }
 };
-console.log(websites);
-console.log(websites.Website);
-const Design=websites.Design;
-console.log(Object.keys(websites.Design).length);
-let Designq=new Component(0)[2];
 
 class NavBarReact extends Component{
     render(){
