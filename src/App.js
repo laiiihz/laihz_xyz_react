@@ -6,8 +6,6 @@ import {
 } from 'react-materialize';
 import './App.css';
 
-
-
 const webName='Laihz';
 const webNavName='Laihz Navigator';
 const webUrlMe='http://laihz.xyz';
@@ -102,8 +100,9 @@ class ButtonIn extends Component{
         let objq=this.props.objq;
         let myrealobj=websites[objq];
         for(let i=1;i<Object.keys(myrealobj).length;i++){
+            let url=myrealobj[Object.keys(myrealobj)[i]];
             item.push(<ButtonItem
-                siteUrl=" "
+                siteUrl={url}
                 siteNameMe={Object.keys(myrealobj)[i]}/>);
         }
         return (
