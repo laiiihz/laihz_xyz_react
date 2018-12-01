@@ -86,15 +86,6 @@ class CardNavReact extends Component{
     }
 }
 
-function NavImage() {
-    return <img src='res/1.jpg' alt='Navigator'/>;
-}
-
-function NavSpan() {
-    return <span className="card-title " style={{fontSize:"50px"}}>{webNavName}</span>;
-
-}
-
 class CardNav extends Component{
     render() {
         return (
