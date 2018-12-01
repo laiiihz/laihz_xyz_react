@@ -55,13 +55,6 @@ console.log(websites.Website);
 const Design=websites.Design;
 console.log(Object.keys(websites.Design)[0]);
 let Designq=new Component(0)[2];
-function Designxx() {
-
-}
-
-function ListHref(props) {
-    return <li><a href={props.webUrl} className="black-text">{props.webName}</a></li>;
-}
 
 class NavBarReact extends Component{
     render(){
@@ -81,6 +74,16 @@ class CardNavReact extends Component{
                     header={<CardTitle image='res/1.jpg'>{BigNavName}</CardTitle>}>
                     <span>Laihz Navigator powered by <a href={laihzGithub}>Laihz</a></span>
                 </Card>
+            </div>
+        );
+    }
+}
+
+class NavWebs extends Component{
+    render(){
+        return (
+            <div className='container'>
+
             </div>
         );
     }
