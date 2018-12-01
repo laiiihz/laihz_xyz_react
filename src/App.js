@@ -26,10 +26,12 @@ const websites={
         github:'https://github.com/'
     },
     Design:{
+        icon:'camera_enhance',
         unsplash:'https://unsplash.com/',
         iconFont:'http://www.iconfont.cn/'
     },
     Website:{
+        icon:'personal_video',
         otpTool:'https://otp.landian.la/zh-cn/',
         appinn:'https://www.appinn.com/',
         iplaysoft:'https://www.iplaysoft.com/',
@@ -37,15 +39,18 @@ const websites={
         zimuzu:'http://www.zimuzu.tv/'
     },
     OJ:{
+        icon:'code',
         PAT:'https://www.patest.cn/',
         leetcodeCN:'https://www.leetcode-cn.com/',
         luogu:'https://www.luogu.org/'
     },
     spirit:{
+        icon:'nature_people',
         offTheAir:'https://www.adultswim.com/videos/off-the-air',
         chromeEx:'https://experiments.withgoogle.com/'
     },
     Goods:{
+        icon:'shopping_basket',
         ikea:'https://www.ikea.cn/cn/zh/',
         decathlon:'https://www.decathlon.com.cn/',
         mi:'https://www.mi.com/'
@@ -80,23 +85,19 @@ class CardNavReact extends Component{
     }
 }
 
-function WebGen()  {
-    let result=<div></div>;
-    for(let i=0;i<Object.keys(websites).length;i++){
-        result+=(
-            <CollapsibleItem header={Object.keys(websites)[i]} icon={Object.keys(Object.keys(websites)[i])[0]}>
-                Lorem ipsum dolor sit amet.
-            </CollapsibleItem>
-        );
-    }
-    console.log();
-    return result;
+class ButtonItem extends Component{
+
 }
+
+class ButtonIn extends Component{
+
+}
+
 class WebItem extends Component{
     render(){
         return (
-            <CollapsibleItem header={this.props.header} >
-                Lorem ipsum dolor sit amet.
+            <CollapsibleItem header={this.props.header} icon={this.props.myicon}>
+                @
             </CollapsibleItem>
         );
     }
@@ -105,7 +106,11 @@ class WebsGen extends Component{
     render() {
         let item=[];
         for(let i=0;i<Object.keys(websites).length;i++){
+            let temp=Object.keys(websites[Object.keys(websites)[i]])[0];
+            let temp2=websites[Object.keys(websites)[i]].icon;
+            console.log(temp);
             item.push(<WebItem  header={Object.keys(websites)[i]}
+                                myicon={temp2}
                                 key={Object.keys(websites)[i]}/>);
         }
         return item;
