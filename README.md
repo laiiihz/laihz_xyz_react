@@ -8,7 +8,7 @@ nodejs package require
 `react-materialize`
 `react-create-app`
 
-###installition
+### installition
 On Debian&&Ubuntu
 ```bash
 apt update
@@ -38,7 +38,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-##Deployment
+## Deployment
 ```bash
 npm build
 cd build
@@ -54,14 +54,14 @@ cd build
     
     See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-##Built With
+## Built With
 [node.js][1]
 [npm][2]
 [React][3]
 [react-materialize][4]
 
 
-##Author
+## Author
 [Laihz][5]
 
 
