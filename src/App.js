@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button,Icon,Navbar,SideNav,NavItem,Card,CardTitle} from 'react-materialize';
+import {Button,Icon,Navbar,NavItem,Card,CardTitle,Footer,Collapsible,CollapsibleItem} from 'react-materialize';
 //import logo from './logo.svg';
 import './App.css';
 
@@ -17,6 +17,7 @@ const laihzGithub='https://github.com/laiiihz/';
 
 const websites={
     DeveloperWeb:{
+        icon:'developer_mode',
         android:'http://developers.android.google.cn/',
         vscode:'https://code.visualstudio.com/',
         vside:'https://visualstudio.microsoft.com/',
@@ -53,7 +54,8 @@ const websites={
 console.log(websites);
 console.log(websites.Website);
 const Design=websites.Design;
-console.log(Object.keys(websites.Design)[0]);
+console.log(Object.keys(websites.Design).length);
+console.log(Object.getOwnPropertyNames(websites.Design));
 let Designq=new Component(0)[2];
 
 class NavBarReact extends Component{
@@ -79,12 +81,54 @@ class CardNavReact extends Component{
     }
 }
 
+
+class WebItem extends Component{
+    render(){
+        return (
+            <CollapsibleItem header={this.props.header} icon={this.props.myicon}>
+                Lorem ipsum dolor sit amet.
+            </CollapsibleItem>
+        );
+    }
+}
+class WebsGen extends Component{
+    render() {
+        let item=[];
+        for(let i=0;i<Object.keys(websites).length;i++){
+            item.push(<WebItem  header={Object.keys(websites)[i]}
+                                myicon={Object.keys(Object.keys(websites)[i])[0]}
+                                key={Object.keys(websites)[i]}/>);
+            //console.log(Object.keys(Object.keys(websites)[i])[0]);
+
+        }
+        return item;
+    }
+}
+
 class NavWebs extends Component{
     render(){
         return (
             <div className='container'>
+                <Collapsible accordion >
+                    <WebsGen/>
 
+                </Collapsible>
             </div>
+        );
+    }
+}
+
+
+class WebFooter  extends Component{
+    render() {
+        return (
+            <Footer
+                className="grey "
+                moreLinks={
+                    <a className="white-text  right" href={webNavName}>Laihz</a>
+                }>
+                <h5 className="white-text left">Laihz Navigator</h5>
+            </Footer>
         );
     }
 }
@@ -95,11 +139,11 @@ class App extends Component {
       <div className="App">
           <NavBarReact/>
           <CardNavReact/>
-
+          <NavWebs/>
+          <WebFooter/>
       </div>
     );
   }
-
 }
 
 export default App;
