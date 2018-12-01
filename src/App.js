@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button,Icon,Navbar,SideNav,NavItem} from 'react-materialize';
+import {Button,Icon,Navbar,SideNav,NavItem,Card,CardTitle} from 'react-materialize';
 //import logo from './logo.svg';
 import './App.css';
 
@@ -8,6 +8,8 @@ import './App.css';
 const webName='Laihz';
 const webNavName='Laihz Navigator';
 const webUrlMe='http://laihz.xyz';
+
+const BigNavName=<span style={{fontSize:'50px'}}>{webNavName}</span>;
 /*
 * web
 * */
@@ -71,6 +73,19 @@ class NavBarReact extends Component{
     }
 }
 
+class CardNavReact extends Component{
+    render() {
+        return (
+            <div className='container'>
+                <Card
+                    header={<CardTitle image='res/1.jpg'>{BigNavName}</CardTitle>}>
+                    <span>Laihz Navigator powered by <a href={laihzGithub}>Laihz</a></span>
+                </Card>
+            </div>
+        );
+    }
+}
+
 function NavImage() {
     return <img src='res/1.jpg' alt='Navigator'/>;
 }
@@ -102,7 +117,7 @@ class App extends Component {
     return (
       <div className="App">
           <NavBarReact/>
-          <CardNav/>
+          <CardNavReact/>
 
       </div>
     );
