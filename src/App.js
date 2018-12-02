@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
     Button,Navbar,NavItem,
     Card,CardTitle,Footer,
-    Collapsible,CollapsibleItem
+    Collapsible,CollapsibleItem,
+    Input
 } from 'react-materialize';
 import './App.css';
 
@@ -176,12 +177,27 @@ class FloatBtn extends Component{
     }
 }
 
+class SearchBar extends Component{
+    render() {
+        return (
+            <div className="container">
+                <Card>
+                    <Input s={6} label="Baidu" />
+                    <Button>Search</Button>
+                </Card>
+            </div>
+        );
+    }
+}
+
+
 class App extends Component {
   render() {
     return (
       <div className="App">
           <NavBarReact/>
           <CardNavReact/>
+          <SearchBar/>
           <NavWebs/>
           <WebFooter/>
           <FloatBtn/>
