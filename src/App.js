@@ -3,7 +3,7 @@ import {
     Button,Navbar,NavItem,
     Card,CardTitle,Footer,
     Collapsible,CollapsibleItem,
-    Input
+    Input,Row,Col
 } from 'react-materialize';
 import './App.css';
 
@@ -182,10 +182,11 @@ class SearchBar extends Component{
         return (
             <div className="container">
                 <Card>
-                    <Input s={6} label="Baidu" />
-                    <Button>Search</Button>
+                    <Input label="Baidu"/>
+                    <Button >Search</Button>
                 </Card>
             </div>
+
         );
     }
 }
