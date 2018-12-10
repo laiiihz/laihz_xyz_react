@@ -140,9 +140,8 @@ class NavWebs extends Component{
     render(){
         return (
             <div className='container'>
-                <Collapsible accordion >
+                <Collapsible popout >
                     <WebsGen/>
-
                 </Collapsible>
             </div>
         );
