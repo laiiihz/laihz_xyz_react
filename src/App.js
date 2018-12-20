@@ -177,12 +177,25 @@ class FloatBtn extends Component{
 /*TODO ss */
 
 class SearchBar extends Component{
+    constructor(props){
+        super(props);
+        this.state={value:''};
+        this.handleChange=this.handleChange.bind(this);
+    }
+
+    handleChange(event){
+        this.setState({value:event.target.value});
+    }
+
     render() {
+        var value=this.state.value;
+        var myhttps='https://www.baidu.com/s?&wd='+value;
+        console.log(myhttps);
         return (
             <div className="container">
                 <Card>
-                    <Input label="Baidu"/>
-                    <Button >Search</Button>
+                    <Input label="Baidu" value={value} onChange={this.handleChange}/>
+                    <Button wave='light' node='a' href={myhttps} >Search</Button>
                 </Card>
             </div>
 
