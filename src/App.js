@@ -64,6 +64,7 @@ class NavBarReact extends Component{
         return (
             <Navbar  left className="grey">
                 <NavItem href={webUrlMe} >Github</NavItem>
+                <NavItem href="./blog">Blog</NavItem>
             </Navbar>
         );
     }
@@ -167,9 +168,7 @@ class FloatBtn extends Component{
     render() {
         return (
             <Button floating fab='vertical' icon='toys' className='red' large style={{bottom: '45px', right: '24px'}}>
-                <Button floating icon='insert_chart' className='red'/>
-                <Button floating icon='format_quote' className='yellow darken-1'/>
-                <Button floating icon='publish' className='green'/>
+
                 <Button floating icon='near_me' node='a' href='http://laihz.xyz/laihz/ss/' className='blue'/>
             </Button>
         );
